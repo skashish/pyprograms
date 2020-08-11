@@ -25,9 +25,10 @@ while(True):
         wget.download(link)
         print()
         segment_number = segment_number + 1
+        retry_count = 0
         continue
     except:
-        if(retry_count < 4):
+        if(retry_count < 10):
             print('Retrying segment '+ str(segment_number))
             retry_count = retry_count + 1
             continue
