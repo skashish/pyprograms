@@ -3,11 +3,12 @@
 # Downloads and combines video segments from the web. You need to put segment's url in proper order in the "link" variable.
 # Tested on Debian 10 (Buster). Must work on Debian and Ubuntu derivatives.
 # Dependencies: sudo apt install python3 wget ffmpeg
+# Written by kashish sharma. Github link: https://github.com/skashish/pyprograms/blob/master/download_segmented_video.py
 
 import os
 import wget
 
-directory = '/home/kashish/Downloads/.temp'
+directory = str(os.environ['HOME'])+'/Downloads/.temp'
 
 if not os.path.exists(directory):
     os.makedirs(directory)
@@ -29,7 +30,7 @@ while(True):
         continue
     except:
         if(retry_count < 10):
-            print('Retrying segment '+ str(segment_number))
+            print('\nRetrying segment '+ str(segment_number))
             retry_count = retry_count + 1
             continue
         else:
