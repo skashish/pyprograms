@@ -59,7 +59,7 @@ while(True):
         thread3.start()
         thread4.start()
 
-        # Wait for both threads to finish
+        # Wait for threads to finish
         thread1.join()
         thread2.join()
         thread3.join()
